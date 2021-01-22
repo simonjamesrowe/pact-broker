@@ -1,0 +1,53 @@
+
+Showing logs for build [32msimonjamesrowe-pact-broker-mast-2hh6p-2[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1611315162.1353893,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32msimonjamesrowe-pact-broker-mast-2hh6p-2[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32msimonjamesrowe-pact-broker-mast-2hh6p-2[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
+
+Showing logs for build [32msimonjamesrowe-pact-broker-mast-2hh6p-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-simonjamesrowe-pact-broker-mast-2hh6p-ddr5p[0m
+{"level":"info","ts":1611315171.5603645,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/simonjamesrowe/****-broker.git @ v0.0.2 in path /workspace/source"}
+{"level":"warn","ts":1611315171.5604842,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /****/.ssh: file exists"}
+{"level":"info","ts":1611315171.6118252,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32msimonjamesrowe-pact-broker-mast-2hh6p-2[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32msimonjamesrowe-pact-broker-mast-2hh6p-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:b93dab6c7cc445d88339e044f6071df45e53b24a
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32msimonjamesrowe-pact-broker-mast-2hh6p-2[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32msimonjamesrowe-pact-broker-mast-2hh6p-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-helm-build[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+DEBUG: Using helmBinary helm with feature flag: template-mode
+DEBUG: Initialising Helm 'init --client-only'
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+Running helm dependency build in .
+No requirements found in ./charts.
+
+Showing logs for build [32msimonjamesrowe-pact-broker-mast-2hh6p-2[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/****-broker to an unshallow repository
+Generating change log from git ref 625f6d514d57554a70b9af1a9ff50827ae1b1749 => c814e6f860d1edd67211812155a60e2d250481db
+Associating user simon-rowe in users.jenkins.io with email simon.rowe@gmail.com to git GitProvider user with login simon-rowe-0 as emails match
+Adding label jenkins.io/git-github-userid=simon-rowe-0 to user simon-rowe in users.jenkins.io
+Associating user simon-rowe in users.jenkins.io with email simon.rowe@gmail.com to git GitProvider user with login simon-rowe-0 as emails match
+Adding label jenkins.io/git-github-userid=simon-rowe-0 to user simon-rowe in users.jenkins.io
+Finding issues in commit messages using git format
+WARNING: No release found for simonjamesrowe/****-broker and tag v0.0.2 so creating a new release
+Updated the release information at https://github.com/simonjamesrowe/****-broker/releases/tag/v0.0.2
+generated: /workspace/source/charts/****-broker/templates/release.yaml
+Created Release ****-broker-0-0-2 resource in namespace **
+Updating PipelineActivity simonjamesrowe-****-broker-master-2 with version 0.0.2
+Updated PipelineActivities simonjamesrowe-****-broker-master-2 with release notes URL: https://github.com/simonjamesrowe/****-broker/releases/tag/v0.0.2
+
+Showing logs for build [32msimonjamesrowe-pact-broker-mast-2hh6p-2[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file ****-broker-0.0.2.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
