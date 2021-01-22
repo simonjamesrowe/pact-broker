@@ -1,0 +1,57 @@
+
+Showing logs for build [32msimonjamesrowe-pact-broker-mast-pws59-1[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1611303283.4911294,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32msimonjamesrowe-pact-broker-mast-pws59-1[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32msimonjamesrowe-pact-broker-mast-pws59-1[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
+
+Showing logs for build [32msimonjamesrowe-pact-broker-mast-pws59-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-simonjamesrowe-pact-broker-mast-pws59-tfj7t[0m
+{"level":"info","ts":1611303291.889425,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/simonjamesrowe/pact-broker.git @ v0.0.1 in path /workspace/source"}
+{"level":"warn","ts":1611303291.8895345,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /****/.ssh: file exists"}
+{"level":"info","ts":1611303291.9483461,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32msimonjamesrowe-pact-broker-mast-pws59-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32msimonjamesrowe-pact-broker-mast-pws59-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32msimonjamesrowe-pact-broker-mast-pws59-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32msimonjamesrowe-pact-broker-mast-pws59-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-helm-build[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+DEBUG: Using helmBinary helm with feature flag: template-mode
+DEBUG: Initialising Helm 'init --client-only'
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+Running helm dependency build in .
+No requirements found in ./charts.
+
+Showing logs for build [32msimonjamesrowe-pact-broker-mast-pws59-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/pact-broker to an unshallow repository
+Generating change log from git ref 1b31a699f74a899b9a48a26d72f172d488b07751 => 625f6d514d57554a70b9af1a9ff50827ae1b1749
+Associating user simon-rowe in users.jenkins.io with email simon.rowe@gmail.com to git GitProvider user with login simon-rowe-0 as emails match
+Adding label jenkins.io/git-github-userid=simon-rowe-0 to user simon-rowe in users.jenkins.io
+Associating user simon-rowe in users.jenkins.io with email simon.rowe@gmail.com to git GitProvider user with login simon-rowe-0 as emails match
+Adding label jenkins.io/git-github-userid=simon-rowe-0 to user simon-rowe in users.jenkins.io
+Finding issues in commit messages using git format
+Associating user simon-rowe in users.jenkins.io with email simon.rowe@gmail.com to git GitProvider user with login simon-rowe-0 as emails match
+Adding label jenkins.io/git-github-userid=simon-rowe-0 to user simon-rowe in users.jenkins.io
+Associating user simon-rowe in users.jenkins.io with email simon.rowe@gmail.com to git GitProvider user with login simon-rowe-0 as emails match
+Adding label jenkins.io/git-github-userid=simon-rowe-0 to user simon-rowe in users.jenkins.io
+WARNING: No release found for simonjamesrowe/pact-broker and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/simonjamesrowe/pact-broker/releases/tag/v0.0.1
+generated: /workspace/source/charts/pact-broker/templates/release.yaml
+Created Release pact-broker-0-0-1 resource in namespace **
+Updating PipelineActivity simonjamesrowe-pact-broker-master-1 with version 0.0.1
+Updated PipelineActivities simonjamesrowe-pact-broker-master-1 with release notes URL: https://github.com/simonjamesrowe/pact-broker/releases/tag/v0.0.1
+
+Showing logs for build [32msimonjamesrowe-pact-broker-mast-pws59-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file pact-broker-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
