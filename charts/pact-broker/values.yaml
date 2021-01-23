@@ -99,3 +99,24 @@ jxRequirements:
     annotations:
     #  kubernetes.io/ingress.class: nginx
 
+cleanup:
+  Annotations:
+    helm.sh/hook: pre-delete
+    helm.sh/hook-delete-policy: hook-succeeded
+  Args:
+    - --cleanup
+expose:
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+  Args:
+    - --v
+    - 4
+  config:
+    domain: simonjamesrowe.com
+    exposer: Ingress
+    http: "false"
+    tlsSecretName: tls-simonjamesrowe-com-p
+    tlsacme: "true"
+    urltemplate: '{{.Service}}-{{.Namespace}}.{{.Domain}}'
+  production: true
